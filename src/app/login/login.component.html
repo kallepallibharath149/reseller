@@ -1,0 +1,44 @@
+
+<div  *ngIf="!success">
+    
+  <div class="well ">
+    <div class="card card-primary container cent">
+
+      <form ngForm #loginform="ngForm"  (submit)="validate()">
+        <h5 class="card-header bg-primary text-white" >Login</h5>
+        <div class="card-body ">
+          <div class="row">
+            <div class="form-group col-md-8">
+              <label>Email</label>
+              <input type="email" required #email="ngModel" class="form-control" name="email" [(ngModel)]="login.email">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-8">
+              <label>Password</label>
+              <input type="password" required  class="form-control" name="password" #pass='ngModel' [(ngModel)]="login.password">
+            </div>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-primary my" title="provide all the fiels to submitt"
+          value="SUBMITT" />{{""}}
+        <input type="reset" class="btn btn-primary" title="on click all the fields in form will be cleared"
+          value="RESETT" />
+      </form>
+    </div>
+    <div *ngIf="!success && pass.touched" class="alert alert-danger allr" (click)="allclick()" role="alert">
+      You enterd wrong username and passwrd
+    </div>
+    
+    {{login | json}}
+  </div>
+</div>
+
+<div *ngIf="success">
+    <div *ngIf="success" class="alert alert-success allr" (click)="allclick()" role="alert">
+        logged in successfully done
+      </div>
+      <div class="pull">
+      <button class="btn btn-primary" (click)="log()">{{success? 'LOG OUT':'NULL'}}</button>
+    </div>
+</div>
