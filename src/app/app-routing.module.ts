@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login/login.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+//import { FormsModule } from '@angular/forms';
 
-const routes: Routes = [{path:'buyer', loadChildren:'./buyer/buyer.module#BuyerModule'},
-{path:'seller', loadChildren:'./seller/seller.module#SellerModule'},
-{path:'transporter', loadChildren:'./transporter/transporter.module#TransporterModule'},
-{path:'admin', loadChildren:'./admin/admin.module#AdminModule'}
-  ];
- 
- 
+const routes: Routes = [
+  { path: '', loadChildren: './faculty/faculty.module#FacultyModule'},
+  { path: 'login', component: LoginComponent },
+  { path: '',   redirectTo: '/', pathMatch: 'full' },
+  { path: '**', component:  PagenotfoundComponent}
+];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations:[PagenotfoundComponent],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
+  exports: [RouterModule,PagenotfoundComponent]
 })
 export class AppRoutingModule { }

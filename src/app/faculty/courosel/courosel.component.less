@@ -1,0 +1,137 @@
+:host::ng-deep{
+   ngx-slick-carousel{
+      &.slick-slider.slick-dotted{
+         margin-bottom: 0px !important;
+      }
+      .slick-dots{
+         bottom: 10px !important;
+      }
+   }
+   .font-align{
+   font-size: 25px !important;
+   }
+   // .carousel-item.active{
+   //    animation: animate 2s ;
+   //    animation-fill-mode: forwards;
+   // }
+   
+   // @keyframes animate {
+   //   0% {width: 0%;
+   //            }
+  
+   //   100% {
+   //       width: 100%;}
+   // }
+   .carousel-caption{
+      z-index: 1;
+   }
+    .caption{
+        color: orange !important;
+        box-shadow: 0px 0px 93px red;
+        font-weight: bolder;
+        font-size: 35px;
+     }
+  .courosel-img{
+     display: flex;
+     width: 100%;
+     height: 500px; 
+
+  }  
+}
+.customer-form{
+  // background-color: lightgrey;
+   /* opacity: -0.8; */
+   width: 30%;
+   min-height: 20%;
+   position: absolute;
+   opacity: 0.8;
+   top: 0px;
+   margin: 10px;
+   right: 0;
+   background-image: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+}
+.GanaCaptions{
+   position: absolute;
+   opacity: 0.8;
+   min-height: 40px;
+   width: 45%;
+   top: 15%;
+   margin: 10px;
+   left: 0;
+   color: black;
+   word-break: break-word;
+   .captions{
+      background: linear-gradient(to right, rgb(192, 36, 37), rgb(240, 203, 53));
+      padding: 30px;
+   }
+}
+.input-item{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0 15px;
+   &.input-item-1{
+      padding-top: 15px;
+   }
+   label{
+      color: white;
+   }
+   .form-control{
+      width: 90% !important;
+   }
+}
+.corosal-component{
+   min-height: 120px;
+   position: relative;
+   overflow: hidden;
+   background-image: linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+}
+.heder{
+   color: white;
+   font-weight: bolder;
+   min-height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+   h3{
+      font-weight: bolder !important;
+      font-size : 20px !important;
+   }
+}
+.btn-align{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.ml12 {
+   font-weight: bold;
+   font-size: 25px !important;
+   text-transform: uppercase;
+   letter-spacing: 0.2em;
+   .font-align{
+      font-size: 25px !important;
+   }
+   div{
+      font-size: 25px !important;
+   }
+ }
+ 
+ .ml12 .letter {
+   display: inline-block;
+   line-height: 1em;
+   font-size: 25px !important;
+ }
+ @media only screen and (max-width: 844px)and (min-width:100px) {
+   .customer-form{
+        display: none;
+    }  
+    .GanaCaptions{
+       display: none;
+    }
+ }
+ @media only screen and (max-width: 1024px)and (min-width:843px) { 
+    .GanaCaptions{
+       top: 3%;
+    }
+ }
