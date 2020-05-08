@@ -1,0 +1,80 @@
+:host::ng-deep{
+
+}
+@media screen and (min-width: 100px)and (max-width: 810px) {
+.menu-item{
+    display: none !important;
+}
+.estimate{
+    display: none !important ;
+}
+.estimate-toggle{
+    display: block !important;  
+    color: black;
+}
+  }
+  @media screen and (min-width: 811px) {
+    .estimate{
+        display: block !important;
+    }
+    .estimate-toggle{
+        display: none !important;  
+    }
+    .menu-item{
+        display: flex !important;
+    }
+  }
+   .top-banner-top{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       box-shadow: 0px 9px 15px #888;
+       color: black;
+       .section{
+           flex-grow: 1;
+           img{padding: 5px;}
+       }
+   }
+   .menu-item{
+       font-size: 15px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       color: black;
+       flex-wrap: wrap;
+       cursor: pointer;
+      .sub{
+          padding: 10px;
+          flex-grow: 1;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      } 
+      .sub:hover{
+         animation: menuItem 2s;
+         //border-radius:60px;
+         animation-fill-mode: forwards;
+         animation-timing-function: linear;
+         animation-iteration-count: 1;
+  }
+  @keyframes menuItem {
+    0% {
+        border-radius:0px;
+        background-image:linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
+    }
+    50% {
+        background-image:linear-gradient(to right, rgb(127, 127, 213), rgb(134, 168, 231), rgb(145, 234, 228));
+        border-radius:60px;
+    }
+  }
+   }
+   .getEstimation{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+  }

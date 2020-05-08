@@ -1,0 +1,121 @@
+<div class="faculty-home" style="background-color: white;">
+ 
+  <ng-sidebar-container
+  (onBackdropClicked)="_onBackdropClicked()">
+<ng-sidebar
+  [(opened)]="_opened"
+  [mode]="_MODES[_modeNum]"
+  [keyClose]="_keyClose"
+  [position]="_POSITIONS[_positionNum]"
+  [dock]="_dock"
+  [dockedSize]="'50px'"
+  [autoCollapseHeight]="_autoCollapseHeight"
+  [autoCollapseWidth]="_autoCollapseWidth"
+  [closeOnClickOutside]="_closeOnClickOutside"
+  [closeOnClickBackdrop]="_closeOnClickBackdrop"
+  [showBackdrop]="_showBackdrop"
+  [animate]="_animate"
+  [trapFocus]="_trapFocus"
+  [autoFocus]="_autoFocus"
+  [sidebarClass]="'demo-sidebar'"
+  [ariaLabel]="'My sidebar'"
+  (onOpenStart)="_onOpenStart()"
+  (onOpened)="_onOpened()"
+  (onCloseStart)="_onCloseStart()"
+  (onClosed)="_onClosed()"
+  (onTransitionEnd)="_onTransitionEnd()">
+  
+  <div class="side-bar-top" style="padding:20px;background-color: white;">
+    <div>
+      <img id="brand" src="assets/brand/brand.jpg">
+    </div>
+    <div class="close-icon" (click)=" _toggleOpened()">
+    <i class="fas fa-times-circle fa-2x"></i>
+    </div>
+  </div>
+  <div class="faculty-sidebar">
+    <ng-container *ngFor="let menuItem of sideBarItems; let menuItemIndex=index;">
+      <div class="item-ilign">
+        <div class="aligm-menu hide first">fsvfdvdvd</div>
+        <div class="side-menu-item aligm-menu middle"><div class="icon-arrow">
+          <i class="fas fa-chevron-circle-right"></i>
+        </div>
+        <div>
+          <b>{{menuItem}}</b>
+        </div></div>
+        <div class="aligm-menu hide last">cxz vzdxv bxdv b</div>
+      </div>
+
+    </ng-container>
+
+  </div>
+</ng-sidebar>
+<div ng-sidebar-content style="width:100% ;">
+  <div id="demo"></div>
+  <div class="contact-us" id="top-banner-contact">
+    <div>
+      <div></div>
+    </div>
+    <div>
+      <div class="animation">
+        <app-animate-name></app-animate-name>
+      </div>
+    </div>
+    <div class="phone-numbers">
+      <div><b>7396726149</b></div>
+    </div>
+    </div>   
+  <div class="top-sticky" id="top-banner" style="">
+ <app-topbanner (menuitemClicked)="_toggleOpened()"></app-topbanner> 
+  </div> 
+
+<!--body starts below the top banner-->
+<div class="body-below-topbanner">
+<div class="only-home" *ngIf="showHomepage">
+  <div>
+    <app-courosel [class]="'mainCourosal'"></app-courosel>
+  </div>
+  <br/>
+  <div  class="faculty-body-below">
+    <app-interiors-section  [class]="'kitchen-main-main'" [Title]="'Kitchen Section'" [apiRoute]="'kitchenImages'"></app-interiors-section>
+  </div>
+  <div id="interiors-Section" class="faculty-body-below">
+    <app-interiors-section [class]="'bedroom-main'" [Title]="'BedRoom Section'" [apiRoute]="'kitchenImages'"></app-interiors-section>
+  </div>
+</div>
+<div class="not-home specific-page" *ngIf="!showHomepage">
+  <router-outlet></router-outlet>
+</div>
+
+</div>
+<!--body ends below the top banner-->
+<!--Footer Starts----------------->
+<div class="footer" style="width:100%; height:400px;background-color:lightgray;height:60px">
+<span class="h3">Footer</span>
+</div>
+<!--Footer Ends----------------->
+</div>
+</ng-sidebar-container>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ng-template> 

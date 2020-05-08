@@ -1,0 +1,56 @@
+<div class="corosal-component" > 
+  <!-- <ngb-carousel *ngIf="images"  [ngClass]="class">
+    <div>
+      <ng-container *ngFor="let img of images">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img class="courosel-img" src="{{img+'.jpeg'}}" alt="Random first slide">
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+   
+  </ngb-carousel> -->
+  
+  <ngx-slick-carousel class="carousel" [ngStyle]="{'height': height}"
+#slickModal="slick-carousel" 
+[config]="slideConfig" 
+(init)="slickInit($event)"
+(breakpoint)="breakpoint($event)"
+(afterChange)="afterChange($event)"
+(beforeChange)="beforeChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img [src]="slide" [ngStyle]="{'height': height}" alt="" width="100%">
+</div>
+</ngx-slick-carousel>
+  
+  <div class="customer-form"> 
+    <div class="form">
+      <div class="heder"><h3>Get Detailed Designer Plan </h3></div>
+      <div class="input-item input-item-1 form-group">
+        <input type="text" class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="Your Good Name">
+      </div>
+      <div class="input-item form-group">
+        <input type="text" class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="Phone Number">
+      </div>
+      <div class="input-item form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="Email">
+      </div>
+      <div class="input-item form-group">
+        <input type="text" class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="City">
+      </div>
+      <div class="input-item form-group">
+        <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="off" aria-describedby="emailHelp" placeholder="Pin Code">
+      </div>
+      <div class="btn-align">
+        <button class="btn w-75 mb-4 btn-danger">Submit</button>
+      </div>
+    </div>
+   </div>
+   <div class="GanaCaptions"> 
+  <div class="captions">
+  <h1 class="ml12"></h1>
+  <button class="btn btn-success mt-2">Get Estimation Now</button>
+  </div>
+  </div>
+</div>

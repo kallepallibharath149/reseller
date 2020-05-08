@@ -1,0 +1,44 @@
+:host::ng-deep{
+    .dynamic-Routing{
+        app-facultyhome{
+            height:inherit;
+        }
+        
+    }
+    .whole-sidebar{
+        position: fixed;
+        z-index: 100;
+        .ng-sidebar__backdrop{
+            position: fixed; 
+        }
+        .ng-sidebar{
+    position: fixed;
+        }
+    }
+}
+.log-in{
+    margin: 0;
+    padding: 0;
+    //font-family: sans-serif;
+    //background: #34495e;
+    background: url(../assets/images/bg.jpg) no-repeat;
+    background-size: cover;
+   // background-image: linear-gradient(to right bottom, black ,grey,orange);
+  }
+  :host::ng-deep{
+      .toast-top{
+    app-toasts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        ngb-toast{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50% !important;
+            height: 35px !important;
+        }
+    }
+  }
+}

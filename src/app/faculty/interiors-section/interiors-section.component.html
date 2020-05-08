@@ -1,0 +1,52 @@
+<div class="interior-section" [ngClass]="class">
+<div class="header">
+<div class="title"><h5>{{Title?Title:'Interiors Gallery'}}</h5></div>
+<div class="see-all">
+  <div class="see">See All</div>
+  <div><i class="fa fa-caret-right" style="font-size:36px;color:red"></i></div>
+</div>
+</div>
+<!-- <div class="courosal-section">
+<div class="courosal-large">
+<ng-container *ngFor="let groupitem of items; let itemGroupIndex=index;let first=first;let last=last">
+<div class="image-section" [ngClass]="{'active':itemGroupIndex==currentIndex,'inActive':itemGroupIndex!=currentIndex}">
+<ng-container  *ngFor="let item of groupitem; let eachItemIndex=index;let eachItemFirst=first;let eachItemLast=last">
+<div class="image-item">
+  <img class="courosal-image" [src]="item"/>
+</div>
+</ng-container> 
+  </div>
+</ng-container>
+<div class="right-arrow">
+  <i class="fas fa-2x fa-arrow-right"></i>
+</div>
+<div class="left-arrow" (click)="lefArrow()">
+  <i class="fas fa-2x fa-arrow-left"></i>
+</div>
+</div>
+</div> -->
+<div class="interiors-courosal" [ngClass]="{'back-ground':slides.length<=0}">
+  <ngx-slick-carousel class="carousel" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig" 
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)">
+  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+  <img [src]="slide" alt="" width="100%">
+  </div>
+  </ngx-slick-carousel>
+  <div class="slide" *ngIf="slides.length<=0">
+    <div class="mb-2 alternate">
+  <div style="width:50%">
+    <ngb-progressbar [value]="1000">Loading.....</ngb-progressbar>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- <button (click)="addSlide(slickModal)">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->

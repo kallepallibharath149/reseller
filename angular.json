@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reseller": {
+    "oec": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/reseller",
+            "outputPath": "dist/oec",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,10 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css","./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.less",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
-            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.min.js","./node_modules/jquery/dist/jquery.min.js"],
-            "es5BrowserSupport": true
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
+        ]
           },
           "configurations": {
             "production": {
@@ -58,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "reseller:build"
+            "browserTarget": "oec:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "reseller:build:production"
+              "browserTarget": "oec:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "reseller:build"
+            "browserTarget": "oec:build"
           }
         },
         "test": {
@@ -80,7 +89,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": [],
             "assets": [
@@ -103,7 +112,7 @@
         }
       }
     },
-    "reseller-e2e": {
+    "oec-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +121,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "reseller:serve"
+            "devServerTarget": "oec:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "reseller:serve:production"
+              "devServerTarget": "oec:serve:production"
             }
           }
         },
@@ -132,5 +141,5 @@
       }
     }
   },
-  "defaultProject": "reseller"
+  "defaultProject": "oec"
 }

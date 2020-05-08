@@ -1,0 +1,15 @@
+<div class="log-in">
+  <form class="box"  method="post" (submit)="loggin()">
+    <h1>Login</h1>
+    <input type="text" name="userName" autocomplete="off" [(ngModel)]="login.userName" placeholder="Username">
+    <input type="password" autocomplete="off" [(ngModel)]='login.password' name="password" placeholder="Password">
+    <input type="file" name="upload" id="input" multiple (change)="handleFiles($event)">
+    <input type="submit" name="" value="Login">
+   
+  </form>
+</div>
+<img id="output" width="200" />
+<button id="show"> check</button>
+
+
+

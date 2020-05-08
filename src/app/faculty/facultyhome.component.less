@@ -1,0 +1,226 @@
+
+:host::ng-deep{
+    app-courosel .mainCourosal{
+        .carousel-control-prev{
+            display: none;
+        }
+        .carousel-control-next{
+            display: none;
+        }
+    }
+    @media screen and (min-width: 100px)and (max-width: 810px) {
+        .faculty-sidebar{
+            display: flex;
+        }
+    }
+    @media screen and (min-width: 811px) {
+      .faculty-sidebar{
+          display: none;
+      }
+      .ng-sidebar__backdrop{
+          display: none;
+      }
+      aside{
+          display: none;
+      }
+  }
+    .letter{
+        display: inline-block !important;
+    }
+    ng-sidebar{
+        aside{
+        min-width: 200px;
+        width: 100%;
+        z-index: 1000;
+        background-color: lightskyblue;
+        background-image: linear-gradient(to right, rgba(135,0,0,0), rgba(27,0,0,1));
+       color: white;  
+        }
+    }
+    .ng-sidebar{
+        z-index: 100 !important;
+    }
+    .ng-sidebar__backdrop{
+        z-index: 50 !important;
+        
+    }
+    ng4-loading-spinner{
+        .visible.spinner.center {
+            pointer-events: none;
+        }
+    }
+}
+div.top-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 0px;
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+    font-weight: bolder;
+  }
+  #brand{
+      height: 60px;
+      //width: 70px;
+      padding:5px;
+      cursor: pointer;
+  }
+  #side:hover{
+      border: 1px solid black;
+      border-radius: 6px;
+padding: 3px;
+   background-color:right lightgreen;
+  }
+  .brand-img{
+  width:20% !important;
+  }
+  .top-navgation{
+    width: 80%;  
+  }
+  .faculty-home{
+      height: inherit;
+  }
+  .faculty-sidebar{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 4px 4px 4px 4px;
+      margin: 6px 0 6px 0;
+  }
+  .side-menu-item{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+     // padding: 8px;
+     // margin: 4px 0 4px 0;
+    // width: 100%;
+     padding: 4px 0 4px 0;
+   // border-bottom: 1px solid grey;
+    i{
+        padding-right: 10px;
+    }
+    
+  }
+//   .icon-arrow{
+//     animation: move 1s infinite;
+//   }
+//   @keyframes move {
+//     0% {padding-left:0px;
+//     }
+//     100% {
+//         padding-left:4px
+//     }
+//   }
+  .side-menu-item:hover{
+   background-color: rgb(192, 171, 171);   
+  }
+  .contact-us{
+      height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .phone-numbers{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: white;
+    }
+}
+#top-banner-contact-inside{
+    display: none;
+}
+#demo{
+    width: 0px;
+    height: 0px;
+}
+.positionAlignment{
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    animation: mymove 2s ;
+    animation-fill-mode: forwards;
+ }
+ 
+ @keyframes mymove {
+   0% {width: 0%;
+    overflow: hidden;
+    color:black;
+    background-color: white;}
+
+   100% {background-color: black;
+       color: white;
+       width: 100%;}
+ }
+ .side-bar-top{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-direction: row;
+     flex-wrap: wrap;
+     .close-icon{
+         color: #82594a;
+         flex-grow: 1;
+         display: flex;
+         justify-content: flex-end;
+     }
+ }
+ .item-ilign{
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     justify-content: flex-start;
+     width: 100%;
+     border-bottom: 1px solid grey;
+     &:hover{
+        background-color: rgb(192, 171, 171);  
+     }
+     height: 50px;
+     .first{
+        // flex-grow: 4;
+        width: 40%;
+     }
+     .middle{
+        // flex-grow: 1;
+        width: 50%;
+     }
+     .last{
+        // flex-grow: 3;
+       // width: 0%;
+       display: none;
+     }
+     .aligm-menu{
+         //flex-grow: 1;
+         &.hide{
+            visibility: hidden; 
+         }
+     }
+ }
+ @media screen and (min-width: 301px)and (max-width: 400px) {
+    .first{
+        // flex-grow: 4;
+        width: 39% !important;
+     }
+     .middle{
+        // flex-grow: 1;
+        width: 81% !important;
+     }
+}
+@media screen and (min-width: 100px)and (max-width: 300px) {
+    .first{
+        // flex-grow: 4;
+        width: 18% !important;
+     }
+     .middle{
+        // flex-grow: 1;
+        width: 81% !important;
+     }
+}
+.faculty-body-below{
+    padding: 15px 20px;
+    background-color: white;
+}

@@ -1,0 +1,165 @@
+:host::ng-deep{
+//   .slick-dots{
+//         display: none;
+//     }
+.slick-list.draggable{
+    min-height: 200px;
+}
+.slick-prev, .slick-next{
+    z-index:1;
+    }
+    .slick-prev:before, .slick-next:before{
+        font-size:35px;
+    }
+    .slick-prev{
+        left:0;
+    }
+    .slick-next{
+        right: 20px;
+    }
+    .slick-active:last-child{
+        padding-right: 0px !important;
+    }
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .see-all{
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .see{
+        padding-right: 15px;
+    }
+    }
+}
+.courosal-section{
+    padding-top: 15px;
+    .courosal-large{
+        position: relative;
+        .right-arrow{
+            position: absolute;
+            right: -1%;
+            top: 45%;
+            padding: 5px;
+            background: lightblue;
+        }
+        .left-arrow{
+            position: absolute;
+            left: -1%;
+            top: 45%;
+            padding: 5px;
+            background: lightblue;
+        }
+    }
+    .image-section{
+        position: relative;
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        .image-item{
+            flex-grow: 1;
+        }
+        &.active{
+            display: flex;
+            animation: rightAnimation 2s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            right:0;
+     }
+     @keyframes rightAnimation {
+       from {
+      width:0% ;
+       }
+     to {
+        width: 100%;
+       }
+     }
+        &.inActive{
+            animation: leftAnimation 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-direction: reverse;
+            
+        }
+        @keyframes leftAnimation {
+            from {
+                width: 0%;
+                }
+              to {
+                 width:100%;
+                 overflow: hidden;
+                }
+          }
+        img{
+            width: 320px;
+            height: 220px;
+            padding-right: 10px;
+        }
+    }
+}
+.interiors-courosal{
+    overflow: hidden;
+    min-height: 200px;
+    position: relative;
+}
+.back-ground{
+    background-image: linear-gradient(to right, rgb(221, 62, 84), rgb(107, 229, 133));
+}
+.alternate{
+    position: absolute;
+    top: 42%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ngx-slick-carousel .slick-slide img{
+    height: 200px;
+    padding-right:10px;
+}
+// @media screen and (min-width: 600px)and (max-width: 1010px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 150px;
+//         padding-right:10px;
+//     }
+// }
+// @media screen and (min-width: 1011px)and (max-width: 1400px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 200px;
+//         padding-right:10px;
+//     }
+// }
+@media screen and (min-width: 1401px)and (max-width: 2000px) {
+    ngx-slick-carousel .slick-slide img{
+        height: 260px;
+    }
+}
+// @media screen and (min-width: 400px)and (max-width: 500px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 100px;
+//         padding-right:10px;
+//     }
+// }
+// @media screen and (min-width: 501px)and (max-width: 599px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 125px;
+//         padding-right:10px;
+//     }
+// }
+// @media screen and (min-width: 300px)and (max-width: 399px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 80px;
+//         padding-right:5px;
+//     }
+// }
+// @media screen and (min-width: 80px)and (max-width: 299px) {
+//     ngx-slick-carousel .slick-slide img{
+//         height: 60px;
+//         padding-right:4px;
+//     }
+// }
